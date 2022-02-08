@@ -5,6 +5,7 @@ import { AiFillDashboard } from "react-icons/ai"
 import { IoIosMail } from "react-icons/io"
 import Webinars from '../components/Webinars'
 import Forms from '../components/Forms'
+import FbForms from '../components/FbForms'
 
 export default function Home() {
   const [route, setRoute] = useState("home")
@@ -12,14 +13,14 @@ export default function Home() {
     <div className="">
       <main className="bg-gray-100 dark:bg-gray-800 h-screen overflow-hidden relative">
         <div className="flex items-start justify-between">
-          <div className="h-screen hidden lg:block my-4 ml-4 shadow-lg relative w-80">
+          <div className="h-screen hidden lg:block my-4 ml-4 shadow-lg relative w-64">
             <div className="bg-white h-full rounded-2xl dark:bg-gray-700">
               <div className="flex items-center justify-center pt-6">
                 <h1>GV Agencia</h1>
               </div>
               <nav className="mt-6">
                 <div>
-                  <button onClick={() => setRoute("home")} className={`w-full font-thin uppercase flex items-center p-4 my-2 transition-colors duration-200 justify-start ${route === "home" ? "text-blue-500 border-r-4 bg-gradient-to-r from-transparent to-blue-100" : "text-gray-500"} border-blue-500 dark:from-gray-700 dark:to-gray-800`} href="#">
+                  <button onClick={() => setRoute("home")} className={`w-full font-thin uppercase flex items-center p-4 my-2 transition-colors duration-200 justify-start ${route === "home" ? "text-blue-500 border-r-4 bg-gradient-to-r from-transparent to-blue-100" : "text-gray-500"} border-blue-500 dark:from-gray-700 dark:to-gray-800`}>
                     <span className="text-left">
                       <AiFillDashboard />
                     </span>
@@ -27,7 +28,15 @@ export default function Home() {
                       Forms
                     </span>
                   </button>
-                  <button onClick={() => setRoute("webinars")} className={`w-full font-thin uppercase flex items-center p-4 my-2 transition-colors duration-200 justify-start ${route === "webinars" ? "text-blue-500 border-r-4 bg-gradient-to-r from-transparent to-blue-100" : "text-gray-500"} border-blue-500 dark:from-gray-700 dark:to-gray-800`} href="#">
+                  <button onClick={() => setRoute("fb-forms")} className={`w-full font-thin uppercase flex items-center p-4 my-2 transition-colors duration-200 justify-start ${route === "fb-forms" ? "text-blue-500 border-r-4 bg-gradient-to-r from-transparent to-blue-100" : "text-gray-500"} border-blue-500 dark:from-gray-700 dark:to-gray-800`}>
+                    <span className="text-left">
+                      <AiFillDashboard />
+                    </span>
+                    <span className="mx-4 text-sm font-normal">
+                      Fb Forms
+                    </span>
+                  </button>
+                  <button onClick={() => setRoute("webinars")} className={`w-full font-thin uppercase flex items-center p-4 my-2 transition-colors duration-200 justify-start ${route === "webinars" ? "text-blue-500 border-r-4 bg-gradient-to-r from-transparent to-blue-100" : "text-gray-500"} border-blue-500 dark:from-gray-700 dark:to-gray-800`}>
                     <span className="text-left">
                       <IoIosMail />
                     </span>
@@ -46,7 +55,7 @@ export default function Home() {
                   <div className="container relative left-0 z-50 flex w-3/4 h-auto h-full">
                     <div className="relative flex items-center w-full lg:w-64 h-full group">
                       <div className="absolute z-50 flex items-center justify-center block w-auto h-10 p-3 pr-2 text-sm text-gray-500 uppercase cursor-pointer sm:hidden">
-                        <svg fill="none" className="relative w-5 h-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg fill="none" className="relative w-5 h-5" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" stroke="currentColor" viewBox="0 0 24 24">
                           <path d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z">
                           </path>
                         </svg>
@@ -62,7 +71,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="relative p-1 flex items-center justify-end w-1/4 ml-5 mr-4 sm:mr-0 sm:right-auto">
-                    <a href="#" className="block relative">
+                    <a className="block relative">
                       <img alt="profil" src="/images/person/1.jpg" className="mx-auto object-cover rounded-full h-10 w-10 " />
                     </a>
                   </div>
@@ -73,6 +82,7 @@ export default function Home() {
               <div className="flex flex-col flex-wrap sm:flex-row ">
                 <div className="w-full">
                   {route === "home" && <Forms />}
+                  {route === "fb-forms" && <FbForms />}
                   {route === "webinars" && <Webinars />}
                 </div>
               </div>
